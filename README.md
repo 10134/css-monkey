@@ -9,7 +9,7 @@ The monkey is created as an easteregg for my websites, therefore you must hover 
 
 ## To add the monkey to your website:
 
-1. Add the HTML tags from index.html to your site
+1: Add the HTML tags from index.html to your site
 
 ```html
 <div class="monkey-trigger">
@@ -29,10 +29,15 @@ The monkey is created as an easteregg for my websites, therefore you must hover 
 </div>
 ```
 
-2. include monkey.css
+2: include monkey.css
 
 ```html
 <link rel="stylesheet" type="text/css" href="stylesheets/monkey.css">
 ```
 
+### Modify easily
+#### Size
 The monkey is fully scalable to any size! Simply modify the $scale variable in monkey.scss to change the size of the monkey (and recompile the SASS file).
+
+#### Color
+monkey.scss contains variables for each color used. Simply change the color codes for these and recompile the SASS file, to change the color of the monkey.
