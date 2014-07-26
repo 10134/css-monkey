@@ -1,12 +1,16 @@
 css-monkey
 ==========
 
-A monkey, with rolling eyes, build with CSS.
+![Monkey](http://www.10134.dk/images/monkey.png "Monkey")
+
+A monkey, animated with rolling eyes, build with CSS.
 
 The monkey is created as an easteregg for my websites, therefore you must hover above an area of 10x10 pixels, in the upper-right corner of the website, to reveal the monkey. A __demonstration__ can be found at [www.aybabtu.dk](http://www.aybabtu.dk)
 
-To add the monkey to your website:
+## To add the monkey to your website:
+
 1. Add the HTML tags from index.html to your site
+
 ```html
 <div class="monkey-trigger">
 	<div class="monkey">
@@ -24,10 +28,11 @@ To add the monkey to your website:
 	</div>
 </div>
 ```
+
 2. include monkey.css
+
 ```html
 <link rel="stylesheet" type="text/css" href="stylesheets/monkey.css">
 ```
 
 The monkey is fully scalable to any size! Simply modify the $scale variable in monkey.scss to change the size of the monkey (and recompile the SASS file).
-
