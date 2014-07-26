@@ -1,0 +1,256 @@
+// MONKEY COLOR THEME
+$color-brown: #8E2800;
+$color-light-brown: #B64926;
+$color-yellow: #FF8D15;
+$color-light-yellow: #FFF0A5;
+$color-turkish: #468966;
+$color-red: #B5292A;
+
+// MONKEY SIZE
+$scale: 2;
+$monkey-head-size: 100px *$scale;
+$monkey-ear-size: 50px *$scale;
+$monkey-eye-height: 32px *$scale;
+$monkey-eye-width: 32px *$scale;
+$monkey-mouth-width: 104px *$scale;
+$monkey-mouth-height: 60px *$scale;
+
+@mixin circle($radius, $color) {
+  width: $radius;
+  height: $radius;
+  border-radius: $radius/2;
+  background-color: $color;
+}
+
+@mixin ellipse($width, $height, $color) {
+  width: $width;
+  height: $height;
+  border-radius: $height;
+  background-color: $color;
+}
+
+@mixin triangle-bottom-right($size, $color) {
+  width: 0;
+  height: 0;
+  border-left: $size solid transparent;
+  border-bottom: $size solid $color;
+}
+@mixin triangle-bottom-left($size, $color) {
+  width: 0;
+  height: 0;
+  border-right: $size solid transparent;
+  border-bottom: $size solid $color;
+}
+.monkey-trigger {
+  position: fixed;
+  height: 10px;
+  width: 10px;
+  top: 0;
+  right: 0;
+  z-index: 10000000000000000;
+}
+.monkey-trigger:hover .monkey {
+  display: block;
+}
+.monkey {
+  display: none;
+  position: fixed;
+  top: 100px;
+  left: 300px;
+  z-index: 10000000000000000;
+}
+.monkey .hair:before,
+.monkey .hair:after {
+  content: "";
+  position: absolute;
+}
+.monkey .hair:before {
+  @include triangle-bottom-right(30px *$scale, $color-brown);
+  left: 20px  *$scale;
+  margin-top: -5px  *$scale;
+}
+.monkey .hair:after {
+  @include triangle-bottom-right(30px *$scale, $color-brown);
+  left: 30px *$scale;
+  margin-top: -10px *$scale;
+}
+.monkey .head {
+  position: relative;
+  @include circle($monkey-head-size, $color-brown);
+}
+// MONKEY EAR
+.monkey .ear {
+  position: absolute;
+  top: 10px *$scale;
+  content: "";
+  @include circle($monkey-ear-size, $color-brown);
+}
+.monkey .ear.left {
+  left: -20px *$scale;
+}
+.monkey .ear.right {
+  right: -20px *$scale;
+}
+.monkey .ear.left:before,
+.monkey .ear.right:before {
+  position: absolute;
+  content: "";
+  top: 6px *$scale;
+  @include ellipse($monkey-ear-size, 40px *$scale, $color-light-brown);
+}
+.monkey .ear.left:before {
+  left: 10px *$scale;
+}
+.monkey .ear.right:before {
+  right: 10px *$scale;
+}
+// MONKEY FACE.
+.monkey .face {
+  position: relative;
+  @include circle($monkey-head-size, $color-brown);
+  z-index: 0;
+}
+.monkey .face:before {
+  position: absolute;
+  content: "";
+  top: 20px *$scale;
+  left: 10px *$scale;
+  @include circle(80px *$scale, $color-light-brown);
+  z-index: 1;
+}
+
+// MONKEY EYES
+.monkey .eye {
+  position: absolute;
+  top: 30px *$scale;
+  @include ellipse($monkey-eye-width, $monkey-eye-height, $color-light-yellow);
+  z-index: 4;
+}
+.monkey .eye.left {
+  left: 17px *$scale;
+}
+.monkey .eye.right {
+  right: 17px *$scale;
+}
+.monkey .eye:before,
+.monkey .eye:after {
+  position: absolute;
+  content: "";
+  -webkit-animation: roll-eye 1s infinite linear normal; /* Chrome, Safari, Opera */
+  animation: roll-eye 1s infinite linear normal;
+}
+.monkey .eye:before {
+  top: 10px *$scale;
+  left: 10px *$scale;
+  @include circle(10px *$scale, #000000);
+}
+.monkey .eye:after {
+  top: 11px *$scale;
+  left: 15px *$scale;
+  @include circle(2px *$scale, #FFFFFF);
+}
+.monkey .eye.right:after,
+.monkey .eye.right:before {
+  -webkit-animation: roll-eye 1s infinite linear reverse; /* Chrome, Safari, Opera */
+  animation: roll-eye 1s infinite linear reverse;
+}
+@-webkit-keyframes roll-eye
+{
+  from {
+	-webkit-transform: rotate(90deg)
+	translate(-8px * $scale)
+	rotate(90deg);
+  }
+  to {
+	-webkit-transform: rotate(450deg)
+	translate(-8px * $scale)
+	rotate(-450deg);
+  }
+}
+@keyframes roll-eye
+{
+  from {
+	transform: rotate(90deg)
+	translate(-8px * $scale)
+	rotate(90deg);
+  }
+  to {
+	transform: rotate(450deg)
+	translate(-8px * $scale)
+	rotate(-450deg);
+  }
+}
+
+// MONKEY NOSE
+.monkey .nose:before,
+.monkey .nose:after {
+  position: absolute;
+  content: "";
+  @include circle(2px *$scale, #000000);
+  top: 65px *$scale;
+  left: 47px *$scale;
+  z-index: 4;
+}
+.monkey .nose:after {
+  left: 51px *$scale;
+}
+
+// MONKEY MOUTH
+.monkey .mouth	 {
+  position: absolute;
+  z-index: 3;
+  top: 60px *$scale;
+  left: -2px *$scale;
+  background-color: $color-light-brown;
+  height: $monkey-mouth-height;
+  width: $monkey-mouth-width;
+  border-bottom-left-radius: 85px *$scale 44px *$scale;
+  border-bottom-right-radius: 85px *$scale 44px *$scale;
+  border-top-left-radius: 46px *$scale 44px *$scale;
+  border-top-right-radius: 46px *$scale 44px *$scale;
+}
+
+.monkey .mouth:before {
+  position: absolute;
+  content: "";
+  top: 20px * $scale;
+  left: 23px * $scale;
+  width: 60px * $scale;
+  height: 30px * $scale;
+  background-color: #000000;
+  border-bottom-left-radius: 85px *$scale;
+  border-bottom-right-radius: 90px *$scale;
+}
+.monkey .mouth:after {
+  position: absolute;
+  content: "";
+  top: 32px * $scale;
+  left: 33px * $scale;
+  width: 40px * $scale;
+  height: 20px * $scale;
+  background-color: $color-red;
+  border-top-left-radius: 15px *$scale;
+  border-top-right-radius: 15px *$scale;
+  border-bottom-left-radius: 40px *$scale;
+  border-bottom-right-radius: 40px *$scale;
+  -webkit-animation: move-tongue 1s infinite alternate-reverse; /* Chrome, Safari, Opera */
+  animation: move-tongue 1s infinite alternate-reverse;
+}
+@-webkit-keyframes move-tongue
+{
+  from {
+	top: 32px * $scale;
+  }
+  to {
+	top: 35px * $scale;
+  }
+}
+@keyframes move-tongue
+{
+  from {
+	top: 32px * $scale;
+  }
+  to {
+	top: 35px * $scale;
+  }
+}
