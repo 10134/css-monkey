@@ -13,6 +13,7 @@ $monkey-eye-width: 32px *$scale;
 $monkey-mouth-width: 104px *$scale;
 $monkey-mouth-height: 60px *$scale;
 
+// MIXINS
 @mixin circle($radius, $color) {
   width: $radius;
   height: $radius;
@@ -39,6 +40,8 @@ $monkey-mouth-height: 60px *$scale;
   border-right: $size solid transparent;
   border-bottom: $size solid $color;
 }
+
+// STYLES
 .monkey-trigger {
   position: fixed;
   height: 10px;
@@ -134,7 +137,7 @@ $monkey-mouth-height: 60px *$scale;
 .monkey .eye:after {
   position: absolute;
   content: "";
-  -webkit-animation: roll-eye 1s infinite linear normal; /* Chrome, Safari, Opera */
+  -webkit-animation: roll-eye 1s infinite linear normal; // Chrome, Safari, Opera
   animation: roll-eye 1s infinite linear normal;
 }
 .monkey .eye:before {
@@ -149,7 +152,7 @@ $monkey-mouth-height: 60px *$scale;
 }
 .monkey .eye.right:after,
 .monkey .eye.right:before {
-  -webkit-animation: roll-eye 1s infinite linear reverse; /* Chrome, Safari, Opera */
+  -webkit-animation: roll-eye 1s infinite linear reverse; // Chrome, Safari, Opera
   animation: roll-eye 1s infinite linear reverse;
 }
 @-webkit-keyframes roll-eye
@@ -231,7 +234,7 @@ $monkey-mouth-height: 60px *$scale;
   border-top-right-radius: 15px *$scale;
   border-bottom-left-radius: 40px *$scale;
   border-bottom-right-radius: 40px *$scale;
-  -webkit-animation: move-tongue 1s infinite alternate-reverse; /* Chrome, Safari, Opera */
+  -webkit-animation: move-tongue 1s infinite alternate-reverse; // Chrome, Safari, Opera
   animation: move-tongue 1s infinite alternate-reverse;
 }
 @-webkit-keyframes move-tongue

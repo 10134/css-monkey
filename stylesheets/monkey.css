@@ -114,7 +114,6 @@
   position: absolute;
   content: "";
   -webkit-animation: roll-eye 1s infinite linear normal;
-  /* Chrome, Safari, Opera */
   animation: roll-eye 1s infinite linear normal; }
 
 .monkey .eye:before {
@@ -136,7 +135,6 @@
 .monkey .eye.right:after,
 .monkey .eye.right:before {
   -webkit-animation: roll-eye 1s infinite linear reverse;
-  /* Chrome, Safari, Opera */
   animation: roll-eye 1s infinite linear reverse; }
 
 @-webkit-keyframes roll-eye {
@@ -203,7 +201,6 @@
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
   -webkit-animation: move-tongue 1s infinite alternate-reverse;
-  /* Chrome, Safari, Opera */
   animation: move-tongue 1s infinite alternate-reverse; }
 
 @-webkit-keyframes move-tongue {
