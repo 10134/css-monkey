@@ -3,11 +3,9 @@ css-monkey
 
 ![Monkey](http://www.10134.dk/images/monkey.png "Monkey")
 
-A monkey, animated with rolling eyes, build with CSS.
+A monkey, animated with rolling eyes, built with CSS.
 
 The monkey is created as an easteregg for my websites, therefore you must hover above an area of 10x10 pixels, in the upper-right corner of the website, to reveal the monkey. A __demonstration__ can be found at [www.aybabtu.dk](http://www.aybabtu.dk)
-
----
 
 ### How to add the monkey to your website
 
@@ -36,8 +34,6 @@ The monkey is created as an easteregg for my websites, therefore you must hover 
 ```html
 <link rel="stylesheet" type="text/css" href="stylesheets/monkey.css">
 ```
-
----
 
 ### Modify easily
 #### Size
